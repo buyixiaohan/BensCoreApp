@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>附加调试启动页面</title>
+    <!-- Bootstrap core CSS -->
+    
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        /*
+        * Globals
+        */
+        /* Links */
+        a,
+        a:focus,
+        a:hover {
+            color: #fff;
+        }
+        /* Custom default button */
+        .btn-default,
+        .btn-default:hover,
+        .btn-default:focus {
+            color: #333;
+            text-shadow: none; /* Prevent inheritence from `body` */
+            background-color: #fff;
+            border: 1px solid #fff;
+        }
+        /*
+        * Base structure
+        */
+        html,
+        body {
+            height: 100%;
+            background-color: #333;
+        }
+
+        body {
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 1px 3px rgba(0,0,0,.5);
+        }
+        /* Extra markup and styles for table-esque vertical and horizontal centering */
+        .site-wrapper {
+            display: table;
+            width: 100%;
+            height: 100%; /* For at least Firefox */
+            min-height: 100%;
+            -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+            box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+        }
+
+        .site-wrapper-inner {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .cover-container {
+            margin-right: auto;
+            margin-left: auto;
+        }
+        /* Padding for spacing */
+        .inner {
+            padding: 30px;
+        }
+        /*
+        * Header
+        */
+        .masthead-brand {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .masthead-nav > li {
+            display: inline-block;
+        }
+
+        .masthead-nav > li + li {
+            margin-left: 20px;
+        }
+
+        .masthead-nav > li > a {
+            padding-right: 0;
+            padding-left: 0;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff; /* IE8 proofing */
+            color: rgba(255,255,255,.75);
+            border-bottom: 2px solid transparent;
+        }
+
+        .masthead-nav > li > a:hover,
+        .masthead-nav > li > a:focus {
+            background-color: transparent;
+            border-bottom-color: #a9a9a9;
+            border-bottom-color: rgba(255,255,255,.25);
+        }
+
+        .masthead-nav > .active > a,
+        .masthead-nav > .active > a:hover,
+        .masthead-nav > .active > a:focus {
+            color: #fff;
+            border-bottom-color: #fff;
+        }
+
+        @media (min-width: 768px) {
+            .masthead-brand {
+                float: left;
+            }
+
+            .masthead-nav {
+                float: right;
+            }
+        }
+        /*
+        * Cover
+        */
+        .cover {
+            padding: 0 20px;
+        }
+
+        .cover .btn-lg {
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        /*
+        * Footer
+        */
+        .mastfoot {
+            color: #999; /* IE8 proofing */
+            color: rgba(255,255,255,.5);
+        }
+        /*
+        * Affix and center
+        */
+        @media (min-width: 768px) {
+            /* Pull out the header and footer */
+            .masthead {
+                position: fixed;
+                top: 0;
+            }
+
+            .mastfoot {
+                position: fixed;
+                bottom: 0;
+            }
+            /* Start the vertical centering */
+            .site-wrapper-inner {
+                vertical-align: middle;
+            }
+            /* Handle the widths */
+            .masthead,
+            .mastfoot,
+            .cover-container {
+                width: 100%; /* Must be percentage or pixels for horizontal alignment */
+            }
+        }
+
+        @media (min-width: 992px) {
+            .masthead,
+            .mastfoot,
+            .cover-container {
+                width: 700px;
+            }
+        }
+    </style>
+
+    <!--[if lt IE 9]>
+        <script src="../../assets/js/ie8-responsive-file-warning.js"></script>
+    <![endif]-->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">研发平台</h3>
+                        <nav>
+                            <ul class="nav masthead-nav">
+                                <li class="active"><a href="#">调试启动页</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="inner cover">
+                    <h1 class="cover-heading">调试辅助启动页面，发布删掉</h1>
+                    <blockquote class="blockquote-reverse">
+                        <p>既然选择了远方 便只顾风雨兼程</p>
+                        <footer><cite title="Source Title">汪国真</cite></footer>
+                    </blockquote>
+                    <p class="lead">
+                        <a href="/" class="btn btn-lg btn-default">去看看</a>
+                    </p>
+                    <p>
+                        <span style="color:red">欢迎使用开发平台！</span><br />页面将在3秒后跳转...<br />还剩<span id="num">3</span>秒
+                    </p>
+                </div>
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--<script src="Scripts/jquery-2.2.4.min.js"></script>-->
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            function jump(count) {
+                window.setTimeout(function () {
+                    count--;
+                    if (count > 0) {
+                        $('#num').text(count);
+                        jump(count);
+                    } else {
+                        var loginUrl = "/";
+                        location.href = loginUrl;
+                    }
+                }, 1000);
+            }
+            jump(3);
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MikesBank</name>
+    </assembly>
+    <members>
+        <member name="M:MikesBank.Controllers.EmployeesController.GetEmployee">
+            <summary>
+            获取雇员列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MikesBank.Controllers.ValuesController.Get">
+            <summary>
+            This is the Summary, describing the endpoint
+            </summary>
+            <remarks>These are the Remarks for the endpoint</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:MikesBank.Startup">
+            <summary>
+            参考文档：Web API - Adding Swagger, SQL Server, Logging and Export to Excel
+            https://www.codeproject.com/Articles/5205692/Web-API-Adding-Swagger-SQL-Server-Logging-and-Expo
+            </summary>
+            <remarks>
+            Entity Framework with Audit Tables
+            https://www.codeproject.com/Articles/5216095/Entity-Framework-with-Audit-Tables
+            </remarks>
+        </member>
+        <member name="M:ExportToExcel.CreateExcelFile.CreateExcelDocument(System.Data.DataSet,System.String)">
+            <summary>
+            Create an Excel file, and write it to a file.
+            </summary>
+            <param name="ds">DataSet containing the data to be written to the Excel.</param>
+            <param name="excelFilename">Name of file to be written.</param>
+            <returns>True if successful, false if something went wrong.</returns>
+        </member>
+    </members>
+</doc>
