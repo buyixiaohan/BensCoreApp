@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MikesBank.Models
 {
-    public partial class Department
+    public class Department
     {
         public Department()
         {
             Employee = new HashSet<Employee>();
         }
-
+        [Key]
         public int DepId { get; set; }
         public string DepName { get; set; }
         public string DepOffice { get; set; }

@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using MikesBank.LogProvider;
 using MikesBank.Models;
 using Swashbuckle.AspNetCore.Swagger;
+using VMD.RESTApiResponseWrapper.Core.Extensions;
 
 namespace MikesBank
 {
@@ -52,8 +53,8 @@ namespace MikesBank
                 }
             });
 
-            var connectionString = Configuration.GetConnectionString("AMSDatabase");
-            services.AddDbContext<SouthwindContext>(op => op.UseSqlServer(connectionString));
+            var connectionString = Configuration.GetConnectionString("MyDatabase");
+            services.AddDbContext<MyDbContext>(op => op.UseSqlServer(connectionString));
 
         }
 
@@ -71,6 +72,8 @@ namespace MikesBank
             }
             app.UseStaticFiles();
             app.UseHttpsRedirection();
+
+
             app.UseMvc();
 
             app.UseSwagger();
@@ -82,9 +85,9 @@ namespace MikesBank
                 c.InjectJavascript("Scripts/SwaggerUI/swagger_lang.js");
                 //D:\Github\00 lanlive\MikesBank\MikesBank\Scripts\SwaggerUI\swagger_lang.js
             });
-
+            app.UseAPIResponseWrapperMiddleware();
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddContext(LogLevel.Information, Configuration.GetConnectionString("AMSDatabase"));
+            loggerFactory.AddContext(LogLevel.Information, Configuration.GetConnectionString("MyDatabase"));
         }
     }
 }

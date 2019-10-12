@@ -1,9 +1,7 @@
-﻿using MikesBank.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
+using MikesBank.Models;
 
 namespace MikesBank.LogProvider
 {
@@ -38,8 +36,8 @@ namespace MikesBank.LogProvider
 
         public bool InsertLog(Logging log)
         {
-            string command = $@"INSERT INTO [dbo].[Logging] ([Log_Severity],[Log_Source],[Log_Message],[Log_StackTrace],[Update_By],[Update_Time]) ";
-            command += "VALUES (@Severity,@Source,@Message,@StackTrace,@UpdateBy,@UpdateTime)";
+            string command = $@"INSERT INTO [dbo].[Logging] (LogSeverity , LogSource , LogMessage , LogStackTrace , UpdateBy , UpdateTime) 
+                                VALUES (@Severity,@Source,@Message,@StackTrace,@UpdateBy,@UpdateTime)";
             List<SqlParameter> paramList = new List<SqlParameter>();
             paramList.Add(new SqlParameter("Severity", TruncateTo(log.LogSeverity, 50)));
             paramList.Add(new SqlParameter("Source", TruncateTo(log.LogSource, 1000)));
@@ -54,9 +52,14 @@ namespace MikesBank.LogProvider
         {
             //  Make sure the strings we're trying to save to our database fields aren't longing than our nvarchar() lengths
             if (string.IsNullOrEmpty(str))
+            {
                 return "";
+            }
+
             if (str.Length < maxLength)
+            {
                 return str;
+            }
 
             return str.Substring(0, maxLength);
         }

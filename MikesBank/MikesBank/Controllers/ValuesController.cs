@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using VMD.RESTApiResponseWrapper.Core.Extensions;
+using VMD.RESTApiResponseWrapper.Core.Wrappers;
 
 namespace MikesBank.Controllers
 {
@@ -15,6 +17,7 @@ namespace MikesBank.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+
             return new string[] { "value1", "value2" };
         }
 
@@ -22,13 +25,15 @@ namespace MikesBank.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            throw new ApiException("Your Message", 401, ModelStateExtension.AllErrors(ModelState));
+            //return "value";
         }
 
         // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
         {
+
         }
 
         // PUT api/values/5

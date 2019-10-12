@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MikesBank.Models
 {
@@ -9,7 +10,7 @@ namespace MikesBank.Models
         {
             Department = new HashSet<Department>();
         }
-
+        [Key]
         public int LocId { get; set; }
         public string LocName { get; set; }
         public string LocCountry { get; set; }

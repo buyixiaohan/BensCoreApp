@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
 namespace MikesBank.Models
@@ -10,10 +11,10 @@ namespace MikesBank.Models
         {
             InverseEmpManager = new HashSet<Employee>();
         }
-
+        [Key]
         public int EmpId { get; set; }
-        public string EmpFirstName { get; set; }
-        public string EmpLastName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string EmpJobTitle { get; set; }
         public int? EmpManagerId { get; set; }
         public int? DepId { get; set; }

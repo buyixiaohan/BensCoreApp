@@ -13,10 +13,10 @@ namespace MikesBank.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        private readonly SouthwindContext _context;
+        private readonly MyDbContext _context;
         private readonly ILogger logger;
 
-        public EmployeesController(SouthwindContext context, ILoggerFactory loggerFactory)
+        public EmployeesController(MyDbContext context, ILoggerFactory loggerFactory)
         {
             _context = context;
             logger = loggerFactory.CreateLogger<EmployeesController>();

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace MikesBank.Models
 {
     public partial class Logging
     {
+        [Key]
         public int LogId { get; set; }
         public string LogSeverity { get; set; }
         public string LogSource { get; set; }
